@@ -38,12 +38,12 @@ public class LeakySpanProblemTest {
 
     @Test
     public void normalCaseTest() {
-        doTest("/normal");
+        doTest("/normal");  // passes
     }
 
     @Test
     public void leakyCaseTest() {
-        doTest("/leaky");
+        doTest("/leaky");   // fails: only one trace is created
     }
 
     private void doTest(String s) {
