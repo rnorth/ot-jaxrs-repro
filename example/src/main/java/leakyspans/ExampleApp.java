@@ -29,7 +29,7 @@ public class ExampleApp extends Application<Configuration> {
 
         FilterRegistration.Dynamic filterRegistration = environment.servlets().addFilter("tracingFilter", new SpanFinishingFilter());
         filterRegistration.setAsyncSupported(true);
-        filterRegistration.addMappingForUrlPatterns(EnumSet.of(DispatcherType.REQUEST, DispatcherType.ASYNC), false);
+        filterRegistration.addMappingForUrlPatterns(EnumSet.of(DispatcherType.REQUEST, DispatcherType.ASYNC), false, "/*");
 
         environment.jersey().register(ExampleResource.class);
     }
